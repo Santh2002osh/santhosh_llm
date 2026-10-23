@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-
+from app.routes import files
 app = FastAPI()
 
 @app.get("/")
@@ -14,3 +14,4 @@ def health():
         "status": "your app is healthy"
     }
  
+app.include_router(files.router)
